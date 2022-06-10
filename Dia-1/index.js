@@ -34,7 +34,7 @@ function fazerPergunta() {
   }
 
   buttonPerguntar.setAttribute('disabled', true)
-  
+  buttonPerguntar.textContent = 'Carregando...'
 
   const pergunta = `<div> ${inputPergunta.value} <div>`
   //gerar numero aleatório
@@ -49,6 +49,8 @@ function fazerPergunta() {
 
   setTimeout(function () {
     respostaElement.style.opacity = 0
+    inputPergunta.value = ''
+    buttonPerguntar.textContent = ' Fazer Pergunta '
     buttonPerguntar.removeAttribute('disabled')
   }, 3000)
 }
